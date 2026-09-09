@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+
+backend:
+  name: github
+  repo: saiferlab-cyber/saiferlab-cyber.github.io
+  branch: main
+
+media_folder: assets/uploads
+public_folder: /assets/uploads
+
+collections:
+  - name: pages
+    label: Pages
+
+    files:
+      - name: home
+        label: Homepage
+        file: index.md
+
+        fields:
+          - label: Page title
+            name: title
+            widget: string
+
+          - label: Description
+            name: description
+            widget: text
+            required: false
+
+          - label: Content
+            name: body
+            widget: richtext
