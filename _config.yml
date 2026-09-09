@@ -1,0 +1,38 @@
+title: sAIfer Lab Cybersecurity
+description: Research in AI security, malware analysis, digital forensics, and resilient systems.
+url: "https://saiferlab-cyber.github.io"
+baseurl: ""
+lang: en
+timezone: Europe/Rome
+
+markdown: kramdown
+permalink: pretty
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+  opportunities:
+    output: true
+    permalink: /opportunities/:name/
+  people:
+    output: false
+
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+  - scope:
+      path: ""
+      type: opportunities
+    values:
+      layout: opportunity
+
+exclude:
+  - README.md
+  - INSTALL.md
+  - Gemfile
+  - Gemfile.lock
+

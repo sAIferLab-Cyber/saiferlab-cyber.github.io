@@ -1,0 +1,33 @@
+<footer class="site-footer" id="contact">
+  <div class="shell footer-grid">
+    <div>
+      <a class="brand brand-footer" href="{{ '/' | relative_url }}">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+        <span class="brand-copy">
+          <strong>{{ site.data.site.lab_name }}</strong>
+          <small>{{ site.data.site.unit_name }}</small>
+        </span>
+      </a>
+      <p class="footer-note">Research at the intersection of artificial intelligence, cybersecurity, and digital forensics.</p>
+    </div>
+
+    <div class="footer-links">
+      <h2>Explore</h2>
+      <a href="{{ '/#research' | relative_url }}">Research areas</a>
+      <a href="{{ '/#projects' | relative_url }}">Projects</a>
+      <a href="{{ '/#opportunities' | relative_url }}">Open opportunities</a>
+    </div>
+
+    <div class="footer-links">
+      <h2>Connect</h2>
+      <a href="mailto:{{ site.data.site.email }}">{{ site.data.site.email }}</a>
+      <a href="{{ site.data.site.github_url }}" target="_blank" rel="noopener">GitHub</a>
+      {% if site.data.site.external_url != empty %}<a href="{{ site.data.site.external_url }}" target="_blank" rel="noopener">Institutional profile</a>{% endif %}
+    </div>
+  </div>
+  <div class="shell footer-bottom">
+    <span>© {{ 'now' | date: '%Y' }} {{ site.data.site.lab_name }}</span>
+    <span>{{ site.data.site.location }}</span>
+  </div>
+</footer>
+

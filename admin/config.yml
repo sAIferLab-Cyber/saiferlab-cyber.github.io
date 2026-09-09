@@ -4,29 +4,106 @@ backend:
   name: github
   repo: saiferlab-cyber/saiferlab-cyber.github.io
   branch: main
+  auth_scope: public_repo
+
+site_url: https://saiferlab-cyber.github.io
+display_url: https://saiferlab-cyber.github.io
 
 media_folder: assets/uploads
 public_folder: /assets/uploads
 
 collections:
-  - name: pages
-    label: Pages
-
+  - name: site-settings
+    label: Site Settings
     files:
-      - name: home
-        label: Homepage
-        file: index.md
-
+      - name: general
+        label: General Information
+        file: _data/site.yml
         fields:
-          - label: Page title
-            name: title
-            widget: string
+          - { label: Lab name, name: lab_name, widget: string }
+          - { label: Unit name, name: unit_name, widget: string }
+          - { label: Hero eyebrow, name: eyebrow, widget: string }
+          - { label: Hero headline, name: headline, widget: string }
+          - { label: Introduction, name: intro, widget: text }
+          - { label: Contact email, name: email, widget: string }
+          - { label: Location, name: location, widget: string }
+          - { label: GitHub URL, name: github_url, widget: string }
+          - { label: Institutional URL, name: external_url, widget: string, required: false }
 
-          - label: Description
-            name: description
-            widget: text
-            required: false
+  - name: research-data
+    label: Research Areas
+    files:
+      - name: research-areas
+        label: Research Areas
+        file: _data/research.yml
+        fields:
+          - label: Areas
+            name: items
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: ID, name: id, widget: string, hint: "Lowercase identifier, e.g. malware-analysis" }
+              - { label: Name, name: name, widget: string }
+              - { label: Short name, name: short, widget: string }
+              - { label: Lucide icon, name: icon, widget: string, default: shield }
+              - { label: Color, name: color, widget: select, options: [cyan, lime, violet, amber, coral, blue] }
+              - { label: Description, name: description, widget: text }
 
-          - label: Content
-            name: body
-            widget: richtext
+  - name: projects
+    label: Projects
+    label_singular: Project
+    folder: _projects
+    create: true
+    delete: true
+    extension: md
+    format: yaml-frontmatter
+    slug: "{{slug}}"
+    preview_path: "projects/{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Research area ID, name: area, widget: string, hint: "Must match an ID in Research Areas" }
+      - { label: Status, name: status, widget: select, options: [active, exploratory, completed], default: active }
+      - { label: Year, name: year, widget: string }
+      - { label: Summary, name: summary, widget: text }
+      - { label: Featured, name: featured, widget: boolean, default: true }
+      - { label: Project description, name: body, widget: richtext }
+
+  - name: opportunities
+    label: Opportunities
+    label_singular: Opportunity
+    folder: _opportunities
+    create: true
+    delete: true
+    extension: md
+    format: yaml-frontmatter
+    slug: "{{slug}}"
+    preview_path: "opportunities/{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Research area ID, name: area, widget: string, hint: "Must match an ID in Research Areas" }
+      - { label: Type, name: type, widget: select, options: [Master Thesis, Bachelor Thesis, Internship, PhD, Research Collaboration] }
+      - { label: Status, name: status, widget: select, options: [available, reserved, closed], default: available }
+      - { label: Location, name: location, widget: string }
+      - { label: Supervisor, name: supervisor, widget: string }
+      - { label: Contact email, name: email, widget: string }
+      - { label: Deadline, name: deadline, widget: datetime, required: false, time_format: false }
+      - { label: Summary, name: summary, widget: text }
+      - { label: Featured, name: featured, widget: boolean, default: true }
+      - { label: Full description, name: body, widget: richtext }
+
+  - name: people
+    label: People
+    label_singular: Person
+    folder: _people
+    create: true
+    delete: true
+    extension: md
+    format: yaml-frontmatter
+    slug: "{{slug}}"
+    fields:
+      - { label: Name, name: name, widget: string }
+      - { label: Role, name: role, widget: string }
+      - { label: Email, name: email, widget: string, required: false }
+      - { label: Photo, name: photo, widget: image, required: false }
+      - { label: Order, name: order, widget: number, default: 10, value_type: int }
+      - { label: Biography, name: body, widget: richtext, required: false }
