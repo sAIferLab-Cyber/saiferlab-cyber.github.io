@@ -1,0 +1,48 @@
+---
+layout: default
+body_class: content-page
+---
+<article>
+  <header class="page-hero">
+    <div class="shell page-hero-inner">
+      <p class="section-label">{{ page.eyebrow }}</p>
+      <h1>{{ page.title }}</h1>
+      {% if page.intro %}<p>{{ page.intro }}</p>{% endif %}
+    </div>
+  </header>
+
+  <div class="shell page-content-layout">
+    <nav class="page-index" aria-label="Page navigation">
+      <span>On this page</span>
+      {% if page.page_kind == 'about' %}
+      <a href="#our-mission">Our mission</a>
+      <a href="#how-we-work">How we work</a>
+      <a href="#research-areas">Research areas</a>
+      {% elsif page.page_kind == 'rules' %}
+      <a href="#before-applying">Before applying</a>
+      <a href="#thesis-proposal">Proposal</a>
+      <a href="#research-work">Research work</a>
+      <a href="#deliverables-and-responsible-conduct">Deliverables</a>
+      {% endif %}
+    </nav>
+
+    <div class="prose page-prose">
+      {{ content }}
+
+      {% if page.page_kind == 'about' %}
+      <section class="about-areas" id="research-areas">
+        <h2>Research areas</h2>
+        <div class="compact-area-grid">
+          {% for area in site.data.research.items %}
+          <div class="compact-area-card">
+            <span class="research-icon icon-{{ area.color }}"><i data-lucide="{{ area.icon }}"></i></span>
+            <h3>{{ area.name }}</h3>
+            <p>{{ area.description }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+    </div>
+  </div>
+</article>

@@ -1,10 +1,9 @@
 lab_name: sAIfer Lab
 unit_name: Cybersecurity Research
-eyebrow: Security research for intelligent and connected systems
-headline: We study how systems fail — and how to make them resilient.
-intro: Our work connects artificial intelligence, malware analysis, digital forensics, and software security to address emerging cyber threats.
+eyebrow: Cybersecurity and Artificial Intelligence Research Group
+headline: Research at the intersection of cyber security and AI.
+intro: We investigate intelligent methods for understanding threats, analyzing digital evidence, and designing resilient software and systems.
 email: contact@example.org
 location: Italy
 github_url: https://github.com/saiferlab-cyber
 external_url: ""
-

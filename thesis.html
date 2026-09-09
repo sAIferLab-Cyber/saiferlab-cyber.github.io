@@ -1,0 +1,78 @@
+---
+layout: default
+title: Thesis
+description: Thesis topics offered by the sAIfer Lab Cybersecurity and Artificial Intelligence Research Group.
+permalink: /thesis/
+---
+<header class="page-hero thesis-hero">
+  <div class="shell page-hero-inner thesis-hero-grid">
+    <div>
+      <p class="section-label">Thesis opportunities</p>
+      <h1>Find a research question to make your own.</h1>
+    </div>
+    <p>Browse topics by macroarea and thesis type. Open a topic to read its scope and find the relevant supervisor or external resource.</p>
+  </div>
+</header>
+
+<section class="thesis-catalog">
+  <div class="shell">
+    <div class="catalog-tools">
+      <div class="catalog-count"><strong data-thesis-count>{{ site.theses.size }}</strong><span>topics</span></div>
+      <label>
+        <span>Macroarea</span>
+        <select data-thesis-filter="macroarea">
+          <option value="all">All macroareas</option>
+          {% for area in site.data.research.items %}<option value="{{ area.id }}">{{ area.name }}</option>{% endfor %}
+        </select>
+      </label>
+      <label>
+        <span>Degree level</span>
+        <select data-thesis-filter="degree">
+          <option value="all">All levels</option>
+          <option value="Bachelor's">Bachelor's</option>
+          <option value="Master's">Master's</option>
+        </select>
+      </label>
+      <label>
+        <span>Approach</span>
+        <select data-thesis-filter="approach">
+          <option value="all">All approaches</option>
+          <option value="Experimental">Experimental</option>
+          <option value="Literature review">Literature review</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="thesis-table-wrap">
+      <table class="thesis-table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Supervisor</th>
+            <th>Macroarea</th>
+            <th>Type</th>
+            <th><span class="sr-only">Link</span></th>
+          </tr>
+        </thead>
+        <tbody data-thesis-list>
+          {% for thesis in site.theses %}
+          {% assign area = site.data.research.items | where: "id", thesis.macroarea | first %}
+          <tr data-thesis-item data-macroarea="{{ thesis.macroarea }}" data-degree="{{ thesis.degree_level }}" data-approach="{{ thesis.approach }}">
+            <td data-label="Title"><a class="thesis-title" href="{{ thesis.url | relative_url }}">{{ thesis.title }}</a></td>
+            <td data-label="Supervisor">{{ thesis.supervisor }}</td>
+            <td data-label="Macroarea"><span class="area-chip chip-{{ area.color }}">{{ area.short }}</span></td>
+            <td data-label="Type"><span class="thesis-type">{{ thesis.degree_level }}</span><small>{{ thesis.approach }}</small></td>
+            <td data-label="Link">
+              <a class="table-link" href="{% if thesis.link and thesis.link != empty %}{{ thesis.link }}{% else %}{{ thesis.url | relative_url }}{% endif %}" {% if thesis.link and thesis.link != empty %}target="_blank" rel="noopener"{% endif %} aria-label="Open {{ thesis.title }}">
+                <i data-lucide="arrow-up-right"></i>
+              </a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <p class="catalog-empty" hidden data-thesis-empty>No thesis topic matches the selected filters.</p>
+    </div>
+  </div>
+</section>
+

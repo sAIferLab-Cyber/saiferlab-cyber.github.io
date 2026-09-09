@@ -17,11 +17,14 @@ current placeholder README.
 Before publishing, edit:
 
 - `_data/site.yml` for the lab name, description, email, and links;
-- `_data/research.yml` for the research areas;
-- `_projects/` for research projects;
-- `_opportunities/` for thesis and internship opportunities.
+- `_data/research.yml` for the macroareas;
+- `about.md` for the About Us page;
+- `rules.md` for the group rules;
+- `_theses/` for thesis topics.
 
 The email `contact@example.org` is a placeholder and must be replaced.
+The sample thesis entries are marked with `Example:` in their title and should
+be edited or deleted before the website is announced publicly.
 
 ## 3. Commit and push
 

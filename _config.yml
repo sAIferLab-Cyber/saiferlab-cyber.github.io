@@ -9,30 +9,19 @@ markdown: kramdown
 permalink: pretty
 
 collections:
-  projects:
+  theses:
     output: true
-    permalink: /projects/:name/
-  opportunities:
-    output: true
-    permalink: /opportunities/:name/
-  people:
-    output: false
+    permalink: /thesis/:name/
 
 defaults:
   - scope:
       path: ""
-      type: projects
+      type: theses
     values:
-      layout: project
-  - scope:
-      path: ""
-      type: opportunities
-    values:
-      layout: opportunity
+      layout: thesis
 
 exclude:
   - README.md
   - INSTALL.md
   - Gemfile
   - Gemfile.lock
-

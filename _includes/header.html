@@ -13,12 +13,10 @@
     </button>
 
     <nav class="site-nav" aria-label="Primary navigation" data-menu>
-      <a href="{{ '/#research' | relative_url }}">Research</a>
-      <a href="{{ '/#projects' | relative_url }}">Projects</a>
-      <a href="{{ '/#opportunities' | relative_url }}">Opportunities</a>
-      {% if site.people.size > 0 %}<a href="{{ '/#people' | relative_url }}">People</a>{% endif %}
+      <a href="{{ '/about/' | relative_url }}">About us</a>
+      <a href="{{ '/thesis/' | relative_url }}">Thesis</a>
+      <a href="{{ '/rules/' | relative_url }}">Rules</a>
       <a class="nav-admin" href="{{ '/admin/' | relative_url }}"><i data-lucide="square-pen"></i> Admin</a>
     </nav>
   </div>
 </header>
-

@@ -19,36 +19,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const filterButtons = [...document.querySelectorAll('[data-filter]')];
-  const projectCards = [...document.querySelectorAll('[data-filter-grid] [data-area]')];
-  const emptyState = document.querySelector('[data-empty]');
+  const thesisFilters = [...document.querySelectorAll('[data-thesis-filter]')];
+  const thesisItems = [...document.querySelectorAll('[data-thesis-item]')];
+  const thesisCount = document.querySelector('[data-thesis-count]');
+  const thesisEmpty = document.querySelector('[data-thesis-empty]');
 
-  const applyFilter = (area) => {
+  const filterTheses = () => {
+    const values = Object.fromEntries(
+      thesisFilters.map((filter) => [filter.dataset.thesisFilter, filter.value])
+    );
     let visible = 0;
-    projectCards.forEach((card) => {
-      const show = area === 'all' || card.dataset.area === area;
-      card.hidden = !show;
+
+    thesisItems.forEach((item) => {
+      const matchesMacroarea = values.macroarea === 'all' || item.dataset.macroarea === values.macroarea;
+      const matchesDegree = values.degree === 'all' || item.dataset.degree === values.degree;
+      const matchesApproach = values.approach === 'all' || item.dataset.approach === values.approach;
+      const show = matchesMacroarea && matchesDegree && matchesApproach;
+      item.hidden = !show;
       if (show) visible += 1;
     });
 
-    filterButtons.forEach((button) => {
-      const active = button.dataset.filter === area;
-      button.classList.toggle('is-active', active);
-      button.setAttribute('aria-pressed', String(active));
-    });
-
-    if (emptyState) emptyState.hidden = visible !== 0;
+    if (thesisCount) thesisCount.textContent = String(visible);
+    if (thesisEmpty) thesisEmpty.hidden = visible !== 0;
   };
 
-  filterButtons.forEach((button) => {
-    button.addEventListener('click', () => applyFilter(button.dataset.filter));
-  });
-
-  document.querySelectorAll('[data-area-filter]').forEach((card) => {
-    card.addEventListener('click', () => {
-      applyFilter(card.dataset.areaFilter);
-      document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
-    });
-  });
+  thesisFilters.forEach((filter) => filter.addEventListener('change', filterTheses));
 });
-
