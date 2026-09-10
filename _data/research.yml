@@ -4,22 +4,28 @@ items:
     short: Malware
     icon: bug
     color: lime
-    description: Static, dynamic, and memory-based techniques for understanding malicious software and anti-analysis behavior for Windows, Android, IOS, and IoT, and different architectures.
+    description: With the rise of sophisticated malware, the need for advanced detection methods became evident. Early research in the late 1990s and early 2000s focused on signature-based detection. However, as malware evolved, these methods became less effective. Breakthroughs in machine learning and behavioral analysis have led to the development of more dynamic and adaptive malware detection systems.
   - id: digital-forensics
     name: Digital Forensics
     short: Forensics
     icon: scan-search
     color: violet
-    description: Evidence acquisition, reconstruction, provenance, and reproducible analysis across physical and virtual environments.
-  - id: cti
+    description: Understanding the vulnerabilities that allowed a threat actor to succeed in attacking a system requires collecting and correlating data from multiple sources such as logs, program traces, etc. Advanced tools for analyzing binary codes, system memory, files, and execution traces have been developed to get an in-depth understanding of the threats and plan prevention, detection, and response actions.
+  - id: cyber-threat-intelligence
     name: Cyber Threat Intelligence
     short: CTI
     icon: shield
     color: lime
     description: Analysis of data and cyber threats to understand how cyber attacks work, evolve, and their attribution
-  - id: web
+  - id: web-security
     name: Web Security
     short: Web Security
     icon: globe-check
     color: coral
     description: Web Security
+  - id: vulnerability-assessment
+    name: Vulnerability Assessment
+    short: Vulnerability Assessment
+    icon: shield
+    color: violet
+    description: Vulnerability Assessment
