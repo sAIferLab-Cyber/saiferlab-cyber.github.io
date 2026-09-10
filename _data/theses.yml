@@ -9,6 +9,7 @@ items:
     link: https://unicadrsi-my.sharepoint.com/:t:/g/personal/nicola_deidda_unica_it/IQDEALAaspMIT7KC74Ky5WT0ARREm3Q9aXIU36xThrzuOKw?e=ntrDoo
     email: contact@email.com
     abstract: This is a short abstract describing the research question, objectives, and expected contribution of the thesis.
+    difficulty: High
 
   - slug: cti-thesis-placeholder
     title: Placeholder Thesis 2
@@ -19,4 +20,5 @@ items:
     approach: Experimental
     link: https://unicadrsi-my.sharepoint.com/:t:/g/personal/nicola_deidda_unica_it/IQDEALAaspMIT7KC74Ky5WT0ARREm3Q9aXIU36xThrzuOKw?e=ntrDoo
     email: contact2@email.com
-    abstract: This is a short abstract describing the research question, objectives, and expected contribution of the thesis.  
+    abstract: This is a short abstract describing the research question, objectives, and expected contribution of the thesis.
+    difficulty: Medium

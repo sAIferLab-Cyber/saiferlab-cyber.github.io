@@ -64,7 +64,7 @@ permalink: /thesis/
           <span class="area-chip chip-{{ area.color }}">{{ area.short | default: thesis.macroarea }}</span>
           <span class="topic-summary-main">
             <strong>{{ thesis.title }}</strong>
-            <small>{{ thesis.degree_level }} · {{ thesis.approach }}</small>
+            <small>{{ thesis.degree_level }}</small>
           </span>
           <span class="topic-toggle" aria-hidden="true"><i data-lucide="plus"></i></span>
         </summary>
@@ -77,6 +77,8 @@ permalink: /thesis/
             <dl>
               <div><dt>Supervisor</dt><dd>{{ thesis.supervisor }}</dd></div>
               <div><dt>Tutor</dt><dd>{{ thesis.tutor | default: "To be assigned" }}</dd></div>
+              <div><dt>Typology</dt><dd>{{ thesis.approach }}</dd></div>
+              <div><dt>Difficulty</dt><dd>{{ thesis.difficulty }}</dd></div>
             </dl>
             {% if thesis.link and thesis.link != empty %}<a class="button button-primary button-full" href="{{ thesis.link }}" target="_blank" rel="noopener noreferrer">More details <i data-lucide="external-link"></i></a>{% endif %}
             <a class="interest-button" data-interest href="mailto:{{ contact_email }}?subject={{ 'Thesis interest: ' | append: thesis.title | uri_escape }}&amp;body=Hello%2C%0A%0AI%20am%20interested%20in%20this%20thesis%20topic.%0A%0AName%3A%0ADegree%20programme%3A%0AExpected%20start%20date%3A%0A" aria-pressed="false"><i data-lucide="heart"></i><span>I’m interested</span></a>
