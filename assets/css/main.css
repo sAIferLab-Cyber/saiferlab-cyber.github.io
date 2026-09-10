@@ -106,6 +106,7 @@ img { max-width: 100%; display: block; }
 .brand-copy { display: grid; line-height: 1.05; }
 .brand-copy strong { font: 700 1.08rem var(--font-display); letter-spacing: -.02em; }
 .brand-copy small { margin-top: .28rem; color: var(--slate-300); font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; }
+.brand-logo { width: 2.5rem; height: 2.5rem; border-radius: .35rem; }
 
 .site-nav { display: flex; align-items: center; gap: .25rem; }
 .site-nav a { padding: .65rem .85rem; color: var(--slate-300); font-size: .9rem; font-weight: 600; }
