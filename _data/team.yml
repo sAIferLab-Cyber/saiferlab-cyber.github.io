@@ -1,17 +1,105 @@
 professors:
   - name: Giorgio Giacinto
     role: Professor
-    photo: ""
-    linkedin: ""
-    github: ""
-    orcid: ""
+    photo: ''
+    linkedin: ''
+    github: ''
+    orcid: ''
   - name: Davide Maiorca
     role: Professor
-    photo: ""
-    linkedin: ""
-    github: ""
-    orcid: ""
-
-researchers: []
-
-phd_students: []
+    photo: ''
+    linkedin: ''
+    github: ''
+    orcid: ''
+researchers:
+  - name: Leonardo Regano
+    role: Assistant Professor (RTDA)
+    photo: ''
+    linkedin: ''
+    github: ''
+    orcid: ''
+  - name: Lorenzo Pisu
+    role: Post Doc
+    photo: ''
+    linkedin: ''
+    github: ''
+    orcid: ''
+  - name: Alessandro Sanna
+    role: Post Doc
+    photo: ''
+    linkedin: ''
+    github: ''
+    orcid: ''
+  - name: Silvia Sanna
+    role: Post Doc
+    photo: ''
+    linkedin: ''
+    github: ''
+    orcid: ''
+phd_students:
+  - name: Diego Soi
+    role: PhD Student
+    photo: ''
+    linkedin: ''
+    github: ''
+    orcid: ''
+  - name: Nicola Deidda
+    role: PhD Student
+    photo: ''
+    linkedin: ''
+    github: ''
+    orcid: ''
+  - name: Christian Scano
+    role: PhD Student
+    photo: ''
+    linkedin: ''
+    github: ''
+    orcid: ''
+  - name: Pierangelo Loi
+    role: PhD Student
+    photo: ''
+    linkedin: ''
+    github: ''
+    orcid: ''
+  - name: Aurora Arrus
+    role: PhD Student
+    photo: ''
+    linkedin: ''
+    github: ''
+    orcid: ''
+  - name: Emmanuele Massidda
+    role: PhD Student
+    photo: ''
+    linkedin: ''
+    github: ''
+    orcid: ''
+  - name: Fabio Fadda
+    role: PhD Student
+    photo: ''
+    linkedin: ''
+    github: ''
+    orcid: ''
+  - name: Antonio Campus
+    role: PhD Student
+    photo: ''
+    linkedin: ''
+    github: ''
+    orcid: ''
+  - name: Affan Younas
+    role: PhD Student
+    photo: ''
+    linkedin: ''
+    github: ''
+    orcid: ''
+  - name: Louis-Marie Tadeusz Michel Szymkowiak
+    role: PhD Student
+    photo: ''
+    linkedin: ''
+    github: ''
+    orcid: ''
+  - name: Luca Minnei
+    role: PhD Student
+    photo: ''
+    linkedin: ''
+    github: ''
+    orcid: ''
