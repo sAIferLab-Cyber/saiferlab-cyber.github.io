@@ -15,7 +15,7 @@ permalink: /thesis/
   </div>
 </header>
 
-<section class="thesis-catalog" aria-labelledby="thesis-list-title">
+<section class="thesis-catalog" aria-label="Thesis topics">
   <div class="shell">
     <div class="thesis-cta-bar">
       <div>
@@ -25,7 +25,7 @@ permalink: /thesis/
       </div>
       <div class="thesis-cta-actions">
         <a class="button button-primary" href="mailto:{{ general_contact }}?subject={{ '[Thesis] Suggest or request another topic' | uri_escape }}"><i data-lucide="message-square-plus"></i> Suggest or request a topic</a>
-        <a class="button button-dark" href="mailto:{{ general_contact }}?subject={{ '[Thesis updates] Keep me updated' | uri_escape }}&body=Hello%2C%0A%0AI%20would%20like%20to%20receive%20updates%20when%20a%20new%20thesis%20topic%20is%20published.%0A%0AName%3A%0ADegree%20programme%3A%0A"><i data-lucide="bell"></i> Keep me updated</a>
+        <a class="button button-dark" href="mailto:{{ general_contact }}?subject={{ '[Thesis updates] Keep me updated' | uri_escape }}&amp;body=Hello%2C%0A%0AI%20would%20like%20to%20receive%20updates%20when%20a%20new%20thesis%20topic%20is%20published.%0A%0AName%3A%0ADegree%20programme%3A%0A"><i data-lucide="bell"></i> Keep me updated</a>
       </div>
     </div>
 
@@ -55,19 +55,6 @@ permalink: /thesis/
         </select>
       </label>
     </div>
-  </div>
-</section>
-
-<section class="thesis-details" aria-labelledby="thesis-list-title">
-  <div class="shell">
-    <header class="section-heading split-heading">
-      <div>
-        <p class="section-label">Available topics</p>
-        <h2 id="thesis-list-title">Select a title to expand it</h2>
-      </div>
-      <p>Each topic includes a short abstract and the people who will guide the work.</p>
-    </header>
-
     <div class="thesis-detail-list" data-thesis-list>
       {% for thesis in site.data.theses.items %}
       {% assign area = site.data.research.items | where: "id", thesis.macroarea | first %}
@@ -92,7 +79,7 @@ permalink: /thesis/
               <div><dt>Tutor</dt><dd>{{ thesis.tutor | default: "To be assigned" }}</dd></div>
             </dl>
             {% if thesis.link and thesis.link != empty %}<a class="button button-primary button-full" href="{{ thesis.link }}" target="_blank" rel="noopener noreferrer">More details <i data-lucide="external-link"></i></a>{% endif %}
-            <a class="interest-button" data-interest href="mailto:{{ contact_email }}?subject={{ 'Thesis interest: ' | append: thesis.title | uri_escape }}&body=Hello%2C%0A%0AI%20am%20interested%20in%20this%20thesis%20topic.%0A%0AName%3A%0ADegree%20programme%3A%0AExpected%20start%20date%3A%0A" aria-pressed="false"><i data-lucide="heart"></i><span>I’m interested</span></a>
+            <a class="interest-button" data-interest href="mailto:{{ contact_email }}?subject={{ 'Thesis interest: ' | append: thesis.title | uri_escape }}&amp;body=Hello%2C%0A%0AI%20am%20interested%20in%20this%20thesis%20topic.%0A%0AName%3A%0ADegree%20programme%3A%0AExpected%20start%20date%3A%0A" aria-pressed="false"><i data-lucide="heart"></i><span>I’m interested</span></a>
             <small class="interest-note">This sends a pre-filled email, helping the group track genuine interest.</small>
           </aside>
         </div>

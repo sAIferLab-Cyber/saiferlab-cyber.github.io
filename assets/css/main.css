@@ -547,7 +547,7 @@ img { max-width: 100%; display: block; }
 
 .thesis-hero-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(18rem, .8fr); gap: 5rem; align-items: end; }
 .thesis-hero-grid > p { margin-bottom: .5rem !important; }
-.thesis-catalog { padding-block: 3.5rem; background: var(--paper); }
+.thesis-catalog { padding-block: 3.5rem 7rem; background: var(--paper); }
 .thesis-cta-bar { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2rem; align-items: center; margin-bottom: 3.5rem; padding: clamp(1.5rem, 4vw, 2.5rem); background: var(--white); border: 1px solid var(--border); box-shadow: 0 1rem 3rem rgba(5,11,20,.06); }
 .thesis-cta-bar .section-label { margin-bottom: .65rem; color: var(--cyan-dark); }
 .thesis-cta-bar h2 { margin: 0; font: 600 clamp(1.8rem, 3vw, 2.6rem)/1.1 var(--font-display); letter-spacing: -.04em; }
@@ -609,35 +609,36 @@ img { max-width: 100%; display: block; }
 .orcid-mark { font: 700 .78rem var(--font-body); }
 .team-empty { margin: 0; padding: 2rem; color: var(--slate-500); background: var(--white); border: 1px dashed var(--border); }
 
-/* Data-driven thesis details */
-.thesis-details { padding-block: 6rem 7rem; color: var(--white); background: var(--ink-950); }
-.thesis-details .section-heading > p { color: var(--slate-300); }
-.thesis-detail-list { border-top: 1px solid rgba(255,255,255,.14); }
-.thesis-topic { border-bottom: 1px solid rgba(255,255,255,.14); }
+/* Data-driven thesis accordion */
+.thesis-detail-list { background: var(--white); border: 1px solid var(--border); box-shadow: 0 1rem 3rem rgba(5,11,20,.06); }
+.thesis-topic { padding-inline: 1.5rem; border-bottom: 1px solid var(--border); }
+.thesis-topic:last-of-type { border-bottom: 0; }
+.thesis-topic[open] { background: #f9fbfd; }
 .thesis-topic summary { min-height: 6rem; display: grid; grid-template-columns: 9rem minmax(0, 1fr) 2.7rem; gap: 1.25rem; align-items: center; padding-block: 1.15rem; cursor: pointer; list-style: none; }
 .thesis-topic summary::-webkit-details-marker { display: none; }
-.thesis-topic summary strong { font: 600 1.12rem/1.35 var(--font-display); }
+.thesis-topic summary:focus-visible { outline: 2px solid var(--cyan-dark); outline-offset: .35rem; }
+.thesis-topic summary strong { color: var(--text); font: 600 1.12rem/1.35 var(--font-display); }
 .topic-summary-main { display: grid; gap: .25rem; }
 .topic-summary-main small { color: var(--slate-500); font-size: .78rem; font-weight: 500; }
 .topic-toggle { width: 2.7rem; height: 2.7rem; display: grid; place-items: center; color: var(--ink-950); background: var(--cyan); border-radius: 50%; }
 .topic-toggle svg { width: 1rem; transition: transform .2s ease; }
 .thesis-topic[open] .topic-toggle svg { transform: rotate(45deg); }
 .thesis-topic-body { display: grid; grid-template-columns: minmax(0, 1fr) 18rem; gap: clamp(2rem, 7vw, 6rem); padding: .5rem 0 2.5rem 10.25rem; }
-.thesis-topic-copy { max-width: 45rem; color: var(--slate-300); }
-.thesis-topic-copy .topic-summary { margin-top: 0; color: var(--white); font-size: 1.08rem; }
-.thesis-topic-copy .topic-abstract { margin: 0; color: var(--slate-100); font-size: 1.05rem; }
-.thesis-topic-copy h3 { margin: 1.7rem 0 .7rem; color: var(--white); font: 600 1rem var(--font-display); }
-.thesis-topic-copy h3:first-child { margin-top: 0; color: var(--cyan); font-size: .74rem; letter-spacing: .09em; text-transform: uppercase; }
+.thesis-topic-copy { max-width: 45rem; color: var(--slate-700); }
+.thesis-topic-copy .topic-summary { margin-top: 0; color: var(--text); font-size: 1.08rem; }
+.thesis-topic-copy .topic-abstract { margin: 0; color: var(--text); font-size: 1.05rem; }
+.thesis-topic-copy h3 { margin: 1.7rem 0 .7rem; color: var(--text); font: 600 1rem var(--font-display); }
+.thesis-topic-copy h3:first-child { margin-top: 0; color: var(--cyan-dark); font-size: .74rem; letter-spacing: .09em; text-transform: uppercase; }
 .thesis-topic-copy ul { margin-bottom: 0; padding-left: 1.2rem; }
-.topic-meta { display: grid; align-content: start; gap: .55rem; padding-left: 1.25rem; border-left: 2px solid var(--cyan); }
+.topic-meta { display: grid; align-content: start; gap: .55rem; padding-left: 1.25rem; border-left: 2px solid var(--cyan-dark); }
 .topic-meta > span { color: var(--cyan); font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .topic-meta > strong { font: 600 1.05rem var(--font-display); }
 .topic-meta > small { margin-bottom: .7rem; color: var(--slate-500); }
 .topic-meta dl { display: grid; gap: .8rem; margin: 0 0 .7rem; }
 .topic-meta dl div { display: grid; gap: .08rem; }
-.topic-meta dt { color: var(--cyan); font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
-.topic-meta dd { margin: 0; color: var(--white); font: 600 .98rem var(--font-display); }
-.interest-button { min-height: 3rem; display: inline-flex; align-items: center; justify-content: center; gap: .6rem; margin-top: .25rem; padding: .7rem 1rem; color: var(--white); border: 1px solid rgba(255,255,255,.25); border-radius: .35rem; font-weight: 700; }
+.topic-meta dt { color: var(--cyan-dark); font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.topic-meta dd { margin: 0; color: var(--text); font: 600 .98rem var(--font-display); }
+.interest-button { min-height: 3rem; display: inline-flex; align-items: center; justify-content: center; gap: .6rem; margin-top: .25rem; padding: .7rem 1rem; color: var(--text); border: 1px solid var(--border); border-radius: .35rem; font-weight: 700; }
 .interest-button:hover, .interest-button.is-selected { color: var(--coral); border-color: var(--coral); }
 .interest-button svg { width: 1.05rem; }
 .interest-button.is-selected svg { fill: currentColor; }
