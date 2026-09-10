@@ -1,8 +1,8 @@
 ---
-layout: page
 title: Thesis rules
 eyebrow: Information for students
 intro: The steps and working principles used to define, conduct, and complete a thesis with the group.
+layout: page
 page_kind: rules
 permalink: /rules/
 ---
@@ -27,18 +27,20 @@ Read the topic description and verify that your background is aligned with the e
 ## Bachelor's and Master's Degree Programs
 
 <a id="preamble"></a>
+
 ## 1. Preamble and Scope
 
 These regulations define the procedural rules, drafting standards, and role distribution among the student, supervisor, and co-supervisor for the preparation of the thesis.
 
 They apply to:
 
-- Bachelor's Degree thesis students in *Ingegneria Elettronica, Informatica e delle Tecnologie per Internet*;
+- Bachelor's Degree thesis students in _Ingegneria Elettronica, Informatica e delle Tecnologie per Internet_;
 - Master's Degree thesis students in Computer Engineering, Cybersecurity and Artificial Intelligence.
 
 Acceptance of the thesis topic by the student implies full acceptance of these regulations.
 
 <a id="general-rules"></a>
+
 ## 2. General Rules
 
 ### 2.1 Topic Assignment
@@ -130,6 +132,7 @@ Dates are indicative and agreed upon on a case-by-case basis. Any delay exceedin
 Instant messaging services, including WhatsApp, Telegram, and SMS, are not allowed for substantial thesis matters unless expressly agreed otherwise with the co-supervisor.
 
 <a id="drafting-guidelines"></a>
+
 ## 3. Drafting Guidelines
 
 ### 3.1 Writing Tool
@@ -158,13 +161,14 @@ The thesis must respect the following general minimum structure:
 - **Style:** formal, grammatically impersonal, and terminologically precise.
 - **Figures and tables:** numbered, cited in the text, and provided with a caption and source where applicable.
 - **Source code / pseudocode:** included in suitable environments and explained in the text. Uncommented or excessively long listings must not be attached.
-- **LaTeX template:** mandatory for Master's theses.
+- [**LaTeX template**](https://it.overleaf.com/latex/templates/universita-di-cagliari-tesi/qpgyzmvxyhxf)**:** mandatory for Master's theses.
 
 ### 3.4 Citations and Plagiarism
 
 Every idea, datum, or text fragment that is not original must be cited. Plagiarism, including partial or accidental plagiarism, will result in immediate suspension of the work and reporting to the Department Commission.
 
 <a id="student-autonomy"></a>
+
 ## 4. Student Autonomy and Role of Supervisor/Co-Supervisor
 
 ### 4.1 Fundamental Principle
@@ -195,6 +199,7 @@ The student is required to:
 4. Submit the issue to the co-supervisor, or supervisor when no co-supervisor is present, only if it affects the scientific validity of the work.
 
 <a id="bachelors-thesis"></a>
+
 ## 5. Specifications for Bachelor's Thesis
 
 - **Indicative length:** 30–50 pages, excluding title page, table of contents, and bibliography.
@@ -203,6 +208,7 @@ The student is required to:
 - **Code / implementation:** if included, it must be functional and documented, but cannot be the sole object of the thesis.
 
 <a id="masters-thesis"></a>
+
 ## 6. Specifications for Master's Thesis
 
 - **Indicative length:** 70–100+ pages.
@@ -210,6 +216,7 @@ The student is required to:
 - **Originality:** an element of novelty is required, whether theoretical, methodological, or applicative, explicitly stated and defended.
 
 <a id="final-phases"></a>
+
 ## 7. Final Phases
 
 ### 7.1 Draft Submission
@@ -225,6 +232,7 @@ The supervisor, and where involved the co-supervisor, may request up to two revi
 The final version must be approved in writing, by confirmation email from the supervisor, at least 7 days before the deadline for submission to the Registrar's Office.
 
 <a id="final-clause"></a>
+
 ## 8. Final Clause
 
 These regulations may be supplemented by specific agreements between the supervisor, co-supervisor, and student, provided they do not conflict with University regulations. In case of disputes, reference is made to the University Teaching Regulations and the judgment of the Degree Program Coordinator.
