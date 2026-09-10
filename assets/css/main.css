@@ -169,7 +169,7 @@ img { max-width: 100%; display: block; }
 .hero-layout {
   min-height: 42rem;
   display: grid;
-  grid-template-columns: minmax(0, 1.18fr) minmax(19rem, .82fr);
+  grid-template-columns: 1fr;
   align-items: center;
   gap: clamp(3rem, 8vw, 7rem);
   padding-block: 6rem;

@@ -1,9 +1,10 @@
 lab_name: sAIfer Lab
 unit_name: Cybersecurity Research
 eyebrow: Cybersecurity and Artificial Intelligence Research Group
-headline: Research at the intersection of cyber security and AI.
-intro: We investigate intelligent methods for understanding threats, analyzing digital evidence, and designing resilient software and systems.
-email: contact@example.org
+headline: Research Projects and Thesis Opportunities
+intro: Join our team at UniCA, we offer thesis topics intersecting AI and Cybersecurity.
+primary-email: giorgio.giacinto@unica.it
+secondary-email: davide.maiorca@unica.it
 location: Italy
 github_url: https://github.com/saiferlab-cyber
-external_url: ""
+external_url: "https://www.saiferlab.ai/"
