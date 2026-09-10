@@ -1,5 +1,6 @@
 items:
   - slug: placeholder
+    status: taken
     title: Placeholder Thesis
     supervisor: Mario Rossi
     tutor: Laura Bianchi
@@ -12,6 +13,7 @@ items:
     difficulty: High
 
   - slug: cti-thesis-placeholder
+    status: available
     title: Placeholder Thesis 2
     supervisor: Supervisore di prova
     tutor: Tutor di prova
@@ -22,3 +24,16 @@ items:
     email: contact2@email.com
     abstract: This is a short abstract describing the research question, objectives, and expected contribution of the thesis.
     difficulty: Medium
+
+  - slug: placeholder
+    status: completed
+    title: Placeholder Thesis
+    supervisor: Mario Rossi
+    tutor: Laura Bianchi
+    macroarea: web
+    degree_level: Bachelor's
+    approach: Literature review
+    link: https://unicadrsi-my.sharepoint.com/:t:/g/personal/nicola_deidda_unica_it/IQDEALAaspMIT7KC74Ky5WT0ARREm3Q9aXIU36xThrzuOKw?e=ntrDoo
+    email: contact@email.com
+    abstract: This is a short abstract describing the research question, objectives, and expected contribution of the thesis.
+    difficulty: High

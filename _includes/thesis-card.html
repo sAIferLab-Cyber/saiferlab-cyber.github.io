@@ -1,0 +1,35 @@
+{% assign thesis = include.thesis %}
+{% assign area = site.data.research.items | where: "id", thesis.macroarea | first %}
+{% assign contact_email = thesis.email | default: site.data.site["primary-email"] %}
+<details class="thesis-topic thesis-topic-{{ thesis.status | default: 'available' }}" id="{{ thesis.slug }}"{% if include.filterable %} data-thesis-item data-thesis-filterable data-macroarea="{{ thesis.macroarea }}" data-degree="{{ thesis.degree_level }}" data-approach="{{ thesis.approach }}"{% endif %}>
+  <summary>
+    <span class="area-chip chip-{{ area.color }}">{{ area.short | default: thesis.macroarea }}</span>
+    <span class="topic-summary-main">
+      <strong>{{ thesis.title }}</strong>
+      <small>{{ thesis.degree_level }} · {{ thesis.approach }}{% if thesis.completion_year %} · {{ thesis.completion_year }}{% endif %}</small>
+    </span>
+    <span class="topic-toggle" aria-hidden="true"><i data-lucide="plus"></i></span>
+  </summary>
+  <div class="thesis-topic-body">
+    <div class="thesis-topic-copy">
+      <h3>Abstract</h3>
+      <p class="topic-abstract">{{ thesis.abstract | default: thesis.summary }}</p>
+    </div>
+    <aside class="topic-meta">
+      <dl>
+        <div><dt>Supervisor</dt><dd>{{ thesis.supervisor }}</dd></div>
+        <div><dt>Tutor</dt><dd>{{ thesis.tutor | default: "To be assigned" }}</dd></div>
+         <div><dt>Typology</dt><dd>{{ thesis.approach }}</dd></div>
+         <div><dt>Difficulty</dt><dd>{{ thesis.difficulty }}</dd></div>
+        {% if thesis.student and thesis.student != empty %}<div><dt>Student</dt><dd>{{ thesis.student }}</dd></div>{% endif %}
+        {% if thesis.completion_year %}<div><dt>Completed</dt><dd>{{ thesis.completion_year }}</dd></div>{% endif %}
+      </dl>
+      {% if thesis.link and thesis.link != empty %}<a class="button button-primary button-full" href="{{ thesis.link }}" target="_blank" rel="noopener noreferrer">More details <i data-lucide="external-link"></i></a>{% endif %}
+      {% if thesis.paper_link and thesis.paper_link != empty %}<a class="button button-paper button-full" href="{{ thesis.paper_link }}" target="_blank" rel="noopener noreferrer">View paper <i data-lucide="file-text"></i></a>{% endif %}
+      {% if include.filterable %}
+      <a class="interest-button" data-interest href="mailto:{{ contact_email }}?subject={{ 'Thesis interest: ' | append: thesis.title | uri_escape }}&amp;body=Hello%2C%0A%0AI%20am%20interested%20in%20this%20thesis%20topic.%0A%0AName%3A%0ADegree%20programme%3A%0AExpected%20start%20date%3A%0A" aria-pressed="false"><i data-lucide="heart"></i><span>I’m interested</span></a>
+      <small class="interest-note">This sends a pre-filled email, helping the group track genuine interest.</small>
+      {% endif %}
+    </aside>
+  </div>
+</details>

@@ -5,17 +5,21 @@ description: Thesis topics offered by the sAIfer Lab Cybersecurity and Artificia
 permalink: /thesis/
 ---
 {% assign general_contact = site.data.site["primary-email"] %}
+{% assign available_theses = site.data.theses.items | where: "status", "available" %}
+{% assign taken_theses = site.data.theses.items | where: "status", "taken" %}
+{% assign completed_theses = site.data.theses.items | where: "status", "completed" %}
+
 <header class="page-hero thesis-hero">
   <div class="shell page-hero-inner thesis-hero-grid">
     <div>
       <p class="section-label">Thesis opportunities</p>
       <h1>Find a research question to make your own.</h1>
     </div>
-    <p>Browse topics by macroarea and thesis type. Select a title to view its abstract, supervisor, tutor, and related resources.</p>
+    <p>Explore available topics, ongoing work, and completed theses developed with the group.</p>
   </div>
 </header>
 
-<section class="thesis-catalog" aria-label="Thesis topics">
+<section class="thesis-catalog" aria-labelledby="available-theses-title">
   <div class="shell">
     <div class="thesis-cta-bar">
       <div>
@@ -29,8 +33,17 @@ permalink: /thesis/
       </div>
     </div>
 
+    <header class="thesis-status-heading">
+      <div>
+        <p class="section-label">Open opportunities</p>
+        <h2 id="available-theses-title">Available thesis topics</h2>
+        <p>Select a title to view its abstract, supervisor, tutor, and related resources.</p>
+      </div>
+      <a class="cms-status-link" href="{{ '/admin/#/collections/thesis-data/entries/thesis-topics' | relative_url }}"><i data-lucide="settings-2"></i> Admin · Manage status</a>
+    </header>
+
     <div class="catalog-tools">
-      <div class="catalog-count"><strong data-thesis-count>{{ site.data.theses.items.size }}</strong><span>topics</span></div>
+      <div class="catalog-count"><strong data-thesis-count>{{ available_theses.size }}</strong><span>available</span></div>
       <label>
         <span>Macroarea</span>
         <select data-thesis-filter="macroarea">
@@ -42,7 +55,7 @@ permalink: /thesis/
         <span>Degree level</span>
         <select data-thesis-filter="degree">
           <option value="all">All levels</option>
-          {% assign degree_levels = site.data.theses.items | map: "degree_level" | uniq %}
+          {% assign degree_levels = available_theses | map: "degree_level" | uniq %}
           {% for degree in degree_levels %}<option value="{{ degree }}">{{ degree }}</option>{% endfor %}
         </select>
       </label>
@@ -50,45 +63,62 @@ permalink: /thesis/
         <span>Approach</span>
         <select data-thesis-filter="approach">
           <option value="all">All approaches</option>
-          {% assign approaches = site.data.theses.items | map: "approach" | uniq %}
+          {% assign approaches = available_theses | map: "approach" | uniq %}
           {% for approach in approaches %}<option value="{{ approach }}">{{ approach }}</option>{% endfor %}
         </select>
       </label>
     </div>
+
     <div class="thesis-detail-list" data-thesis-list>
-      {% for thesis in site.data.theses.items %}
-      {% assign area = site.data.research.items | where: "id", thesis.macroarea | first %}
-      {% assign contact_email = thesis.email | default: general_contact %}
-      <details class="thesis-topic" id="{{ thesis.slug }}" data-thesis-item data-macroarea="{{ thesis.macroarea }}" data-degree="{{ thesis.degree_level }}" data-approach="{{ thesis.approach }}">
-        <summary>
-          <span class="area-chip chip-{{ area.color }}">{{ area.short | default: thesis.macroarea }}</span>
-          <span class="topic-summary-main">
-            <strong>{{ thesis.title }}</strong>
-            <small>{{ thesis.degree_level }}</small>
-          </span>
-          <span class="topic-toggle" aria-hidden="true"><i data-lucide="plus"></i></span>
-        </summary>
-        <div class="thesis-topic-body">
-          <div class="thesis-topic-copy">
-            <h3>Abstract</h3>
-            <p class="topic-abstract">{{ thesis.abstract | default: thesis.summary }}</p>
-          </div>
-          <aside class="topic-meta">
-            <dl>
-              <div><dt>Supervisor</dt><dd>{{ thesis.supervisor }}</dd></div>
-              <div><dt>Tutor</dt><dd>{{ thesis.tutor | default: "To be assigned" }}</dd></div>
-              <div><dt>Typology</dt><dd>{{ thesis.approach }}</dd></div>
-              <div><dt>Difficulty</dt><dd>{{ thesis.difficulty }}</dd></div>
-            </dl>
-            {% if thesis.link and thesis.link != empty %}<a class="button button-primary button-full" href="{{ thesis.link }}" target="_blank" rel="noopener noreferrer">More details <i data-lucide="external-link"></i></a>{% endif %}
-            <a class="interest-button" data-interest href="mailto:{{ contact_email }}?subject={{ 'Thesis interest: ' | append: thesis.title | uri_escape }}&amp;body=Hello%2C%0A%0AI%20am%20interested%20in%20this%20thesis%20topic.%0A%0AName%3A%0ADegree%20programme%3A%0AExpected%20start%20date%3A%0A" aria-pressed="false"><i data-lucide="heart"></i><span>I’m interested</span></a>
-            <small class="interest-note">This sends a pre-filled email, helping the group track genuine interest.</small>
-          </aside>
-        </div>
-      </details>
+      {% for thesis in available_theses %}
+        {% include thesis-card.html thesis=thesis filterable=true %}
       {% endfor %}
-      <p class="catalog-empty" hidden data-thesis-empty>No thesis topic matches the selected filters.</p>
+      <p class="catalog-empty" {% if available_theses.size > 0 %}hidden{% endif %} data-thesis-empty>No available thesis topic matches the selected filters.</p>
     </div>
+  </div>
+</section>
+
+<section class="thesis-status-section thesis-ongoing" aria-labelledby="ongoing-theses-title">
+  <div class="shell">
+    <header class="thesis-status-heading">
+      <div>
+        <p class="section-label">Work in progress</p>
+        <h2 id="ongoing-theses-title">Assigned / Ongoing theses</h2>
+        <p>Topics that have already been assigned and are currently being developed by students.</p>
+      </div>
+      <span class="status-count">{{ taken_theses.size }} ongoing</span>
+    </header>
+    {% if taken_theses.size > 0 %}
+    <div class="thesis-detail-list thesis-secondary-list">
+      {% for thesis in taken_theses %}
+        {% include thesis-card.html thesis=thesis %}
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="thesis-section-empty">No ongoing thesis has been published yet.</p>
+    {% endif %}
+  </div>
+</section>
+
+<section class="thesis-status-section thesis-completed" aria-labelledby="completed-theses-title">
+  <div class="shell">
+    <header class="thesis-status-heading">
+      <div>
+        <p class="section-label">Research archive</p>
+        <h2 id="completed-theses-title">Completed theses</h2>
+        <p>Past work supervised by the group, including links to resulting publications when available.</p>
+      </div>
+      <span class="status-count">{{ completed_theses.size }} completed</span>
+    </header>
+    {% if completed_theses.size > 0 %}
+    <div class="thesis-detail-list thesis-secondary-list">
+      {% for thesis in completed_theses %}
+        {% include thesis-card.html thesis=thesis %}
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="thesis-section-empty">Completed theses and related papers will appear here.</p>
+    {% endif %}
   </div>
 </section>
 

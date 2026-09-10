@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const thesisFilters = [...document.querySelectorAll('[data-thesis-filter]')];
-  const thesisItems = [...document.querySelectorAll('[data-thesis-item]')];
+  const thesisItems = [...document.querySelectorAll('[data-thesis-filterable]')];
   const thesisCount = document.querySelector('[data-thesis-count]');
   const thesisEmpty = document.querySelector('[data-thesis-empty]');
 

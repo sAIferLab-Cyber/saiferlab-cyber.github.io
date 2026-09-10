@@ -125,10 +125,11 @@ collections:
           - label: Topics
             name: items
             widget: list
-            summary: "{{fields.title}}"
+            summary: "{{fields.title}} — {{fields.status}}"
             fields:
               - { label: ID, name: slug, widget: string, hint: "Unique lowercase ID with hyphens, e.g. android-malware-analysis" }
               - { label: Title, name: title, widget: string }
+              - { label: Status, name: status, widget: select, options: [{ label: "Available", value: available }, { label: "Assigned / Ongoing", value: taken }, { label: "Completed", value: completed }], default: available, hint: "Change this field to move the thesis automatically between the three sections." }
               - { label: Supervisor, name: supervisor, widget: string }
               - { label: Tutor, name: tutor, widget: string, required: false, hint: "Operational point of contact for the student" }
               - { label: Macroarea ID, name: macroarea, widget: string, hint: "Use the ID configured under Macroareas, e.g. malware-analysis" }
@@ -137,3 +138,6 @@ collections:
               - { label: More details link, name: link, widget: string, required: false }
               - { label: Contact email, name: email, widget: string, required: false }
               - { label: Abstract, name: abstract, widget: text }
+              - { label: Student, name: student, widget: string, required: false, hint: "Useful for assigned or completed theses" }
+              - { label: Completion year, name: completion_year, widget: number, value_type: int, required: false }
+              - { label: Related paper URL, name: paper_link, widget: string, required: false, hint: "Add the paper or publication link when available" }
