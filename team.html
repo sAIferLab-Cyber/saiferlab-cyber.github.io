@@ -4,6 +4,7 @@ title: Team
 description: Professors, researchers, and PhD students in the sAIfer Lab Cybersecurity Research Group.
 permalink: /team/
 ---
+
 {% assign team_groups = "professors,researchers,phd_students" | split: "," %}
 {% assign team_labels = "Professors,Researchers,PhD students" | split: "," %}
 
@@ -16,6 +17,19 @@ permalink: /team/
     <!-- <p>Meet the people working across cybersecurity, artificial intelligence, malware analysis, digital forensics, and resilient systems.</p> -->
   </div>
 </header>
+
+<section class="section section-light team-about">
+  <div class="shell split-heading">
+    <div>
+      <h2 class="section-label">About us</h2>
+    </div>
+    <div class="home-about-copy">
+      <p>sAIfer Lab works in Cybersecurity by designing new techniques capable of protecting computer, mobile and IoT systems from malicious threats that may put at risk assets and data.</p>
+      <p>We work across malware analysis, digital forensics, web security and other topics.</p>
+      <a class="inline-arrow" href="{{ site.data.site.external_url}}research/cybersecurity">Learn more about the group</a>
+    </div>
+  </div>
+</section>
 
 <div class="team-directory shell">
   <nav class="team-index" aria-label="Team groups">

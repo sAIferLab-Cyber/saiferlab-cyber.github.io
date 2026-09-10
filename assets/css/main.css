@@ -493,6 +493,8 @@ img { max-width: 100%; display: block; }
 .portal-links svg { width: 1.05rem; color: var(--cyan); }
 
 .home-about h2 { max-width: 18ch; margin: 0; font: 600 clamp(2.3rem, 4vw, 4rem)/1.05 var(--font-display); letter-spacing: -.045em; }
+.team-about h2 { max-width: 22ch; margin: 0; font: 600 clamp(1.8rem, 3vw, 3rem)/1.1 var(--font-display); letter-spacing: -.03em; }
+.team-about .split-heading { grid-template-columns: 1fr; gap: 1.5rem; }
 .home-about-copy p { margin-top: 0; color: var(--slate-700); font-size: 1.08rem; }
 .inline-arrow { display: inline-flex; align-items: center; gap: .6rem; margin-top: .8rem; color: var(--cyan-dark); font-weight: 700; }
 .inline-arrow svg { width: 1rem; transition: transform .18s ease; }
