@@ -44,4 +44,13 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   thesisFilters.forEach((filter) => filter.addEventListener('change', filterTheses));
+
+  const openLinkedThesis = () => {
+    if (!window.location.hash) return;
+    const target = document.getElementById(window.location.hash.slice(1));
+    if (target?.matches('.thesis-topic')) target.open = true;
+  };
+
+  openLinkedThesis();
+  window.addEventListener('hashchange', openLinkedThesis);
 });

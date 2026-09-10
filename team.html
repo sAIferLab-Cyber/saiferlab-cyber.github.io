@@ -1,0 +1,66 @@
+---
+layout: default
+title: Team
+description: Professors, researchers, and PhD students in the sAIfer Lab Cybersecurity Research Group.
+permalink: /team/
+---
+{% assign team_groups = "professors,researchers,phd_students" | split: "," %}
+{% assign team_labels = "Professors,Researchers,PhD students" | split: "," %}
+
+<header class="page-hero team-hero">
+  <div class="shell page-hero-inner team-hero-grid">
+    <div>
+      <p class="section-label">People</p>
+      <h1>Our team</h1>
+    </div>
+    <p>Meet the people working across cybersecurity, artificial intelligence, malware analysis, digital forensics, and resilient systems.</p>
+  </div>
+</header>
+
+<div class="team-directory shell">
+  <nav class="team-index" aria-label="Team groups">
+    {% for group in team_groups %}
+    <a href="#{{ group | replace: '_', '-' }}">{{ team_labels[forloop.index0] }}</a>
+    {% endfor %}
+  </nav>
+
+  {% for group in team_groups %}
+  {% assign people = site.data.team[group] %}
+  <section class="team-section" id="{{ group | replace: '_', '-' }}">
+    <header class="team-section-heading">
+      <p class="section-label">0{{ forloop.index }}</p>
+      <h2>{{ team_labels[forloop.index0] }}</h2>
+      <span>{{ people.size | default: 0 }}</span>
+    </header>
+
+    {% if people and people.size > 0 %}
+    <div class="team-grid">
+      {% for person in people %}
+      <article class="team-card">
+        <div class="team-photo">
+          {% if person.photo and person.photo != empty %}
+          <img src="{{ person.photo | relative_url }}" alt="{{ person.name }}" loading="lazy">
+          {% else %}
+          <span aria-hidden="true">{{ person.name | split: ' ' | first | slice: 0 }}{{ person.name | split: ' ' | last | slice: 0 }}</span>
+          {% endif %}
+        </div>
+        <div class="team-card-body">
+          <h3>{{ person.name }}</h3>
+          <p>{{ person.role }}</p>
+          {% if person.linkedin != empty or person.github != empty or person.orcid != empty %}
+          <div class="team-socials" aria-label="Profiles for {{ person.name }}">
+            {% if person.linkedin and person.linkedin != empty %}<a href="{{ person.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="{{ person.name }} on LinkedIn"><i data-lucide="linkedin"></i></a>{% endif %}
+            {% if person.github and person.github != empty %}<a href="{{ person.github }}" target="_blank" rel="noopener noreferrer" aria-label="{{ person.name }} on GitHub"><i data-lucide="github"></i></a>{% endif %}
+            {% if person.orcid and person.orcid != empty %}<a href="{{ person.orcid }}" target="_blank" rel="noopener noreferrer" aria-label="{{ person.name }} on ORCID"><span class="orcid-mark">iD</span></a>{% endif %}
+          </div>
+          {% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="team-empty">Profiles will be added soon.</p>
+    {% endif %}
+  </section>
+  {% endfor %}
+</div>

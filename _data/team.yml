@@ -1,0 +1,17 @@
+professors:
+  - name: Giorgio Giacinto
+    role: Professor
+    photo: ""
+    linkedin: ""
+    github: ""
+    orcid: ""
+  - name: Davide Maiorca
+    role: Professor
+    photo: ""
+    linkedin: ""
+    github: ""
+    orcid: ""
+
+researchers: []
+
+phd_students: []

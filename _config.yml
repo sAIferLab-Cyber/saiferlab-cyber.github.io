@@ -8,18 +8,6 @@ timezone: Europe/Rome
 markdown: kramdown
 permalink: pretty
 
-collections:
-  theses:
-    output: true
-    permalink: /thesis/:name/
-
-defaults:
-  - scope:
-      path: ""
-      type: theses
-    values:
-      layout: thesis
-
 exclude:
   - README.md
   - INSTALL.md

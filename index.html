@@ -49,9 +49,9 @@ description: Cybersecurity and artificial intelligence research group, thesis to
     </header>
 
     <div class="home-thesis-list">
-      {% for thesis in site.theses limit: 4 %}
+      {% for thesis in site.data.theses.items limit: 4 %}
       {% assign area = site.data.research.items | where: "id", thesis.macroarea | first %}
-      <a class="home-thesis-row" href="{{ thesis.url | relative_url }}">
+      <a class="home-thesis-row" href="{{ '/thesis/' | relative_url }}#{{ thesis.slug }}">
         <span class="area-chip chip-{{ area.color }}">{{ area.short }}</span>
         <strong>{{ thesis.title }}</strong>
         <span>{{ thesis.degree_level }} · {{ thesis.approach }}</span>

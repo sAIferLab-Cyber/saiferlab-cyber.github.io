@@ -1,0 +1,48 @@
+items:
+  - slug: android-memory-analysis
+    title: "Example: Explainable Android Malware Analysis from Memory Artifacts"
+    supervisor: Supervisor to be assigned
+    macroarea: malware-analysis
+    degree_level: Master's
+    approach: Experimental
+    link: ""
+    email: contact@example.org
+    summary: Design and evaluate an explainable analysis pipeline for detecting Android malware from volatile-memory representations.
+    description: The thesis investigates how memory artifacts can be transformed into machine-learning representations while preserving information useful for forensic interpretation.
+    activities:
+      - Review memory-based Android malware analysis methods.
+      - Prepare a reproducible experimental pipeline.
+      - Compare classification and explanation methods.
+      - Evaluate predictive performance and explanation faithfulness.
+
+  - slug: covert-channel-assessment
+    title: "Example: AI-Assisted Assessment of Covert Channels"
+    supervisor: Supervisor to be assigned
+    macroarea: information-hiding
+    degree_level: Master's
+    approach: Experimental
+    link: ""
+    email: contact@example.org
+    summary: Study how language models can support structured covert-channel assessment while keeping decisions traceable and reproducible.
+    description: The thesis evaluates AI-assisted security assessment against a deterministic scoring framework and expert-created reference cases.
+    activities:
+      - Prepare a representative set of covert-channel scenarios.
+      - Design constrained prompts and structured outputs.
+      - Measure agreement, consistency, and error patterns.
+      - Develop explanations and human-validation checkpoints.
+
+  - slug: stegomalware-supply-chain
+    title: "Example: Stegomalware in the Software Supply Chain"
+    supervisor: Supervisor to be assigned
+    macroarea: supply-chain
+    degree_level: Master's
+    approach: Literature review
+    link: ""
+    email: contact@example.org
+    summary: Systematically analyze how information-hiding techniques can support malware delivery and evasion across software supply chains.
+    description: The thesis develops a structured review of stegomalware and information-hiding techniques relevant to software supply-chain attacks.
+    activities:
+      - Define a systematic review protocol and inclusion criteria.
+      - Build a taxonomy of carriers, attack stages, and defensive methods.
+      - Compare the assumptions and limitations of existing detection techniques.
+      - Identify research gaps and reproducible evaluation requirements.
