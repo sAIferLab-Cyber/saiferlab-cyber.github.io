@@ -4,6 +4,8 @@ title: Home
 description: Cybersecurity and artificial intelligence research group, thesis topics, and student guidance.
 ---
 
+{% assign available_theses = site.data.theses.items | where: "status", "available" %}
+
 <section class="hero hero-compact">
   <div class="hero-grid" aria-hidden="true"></div>
   <div class="shell hero-layout">
@@ -40,7 +42,7 @@ description: Cybersecurity and artificial intelligence research group, thesis to
     </header>
 
     <div class="home-thesis-list">
-      {% for thesis in site.data.theses.items limit: 4 %}
+      {% for thesis in available_theses limit: 4 %}
       {% assign area = site.data.research.items | where: "id", thesis.macroarea | first %}
       <a class="home-thesis-row" href="{{ '/thesis/' | relative_url }}#{{ thesis.slug }}">
         <span class="area-chip chip-{{ area.color }}">{{ area.short }}</span>
