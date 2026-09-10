@@ -19,7 +19,20 @@ items:
     description: Analysis of data and cyber threats to understand how cyber attacks work, evolve, and their attribution
   - id: web
     name: Web Security
-    short: Web Security
+    short: WebSec
     icon: globe-check
     color: coral
     description: Web Security
+  - id: vulnerability-assessment
+    name: Vulnerability Assessment
+    short: VA
+    icon: shield
+    color: violet
+    description: Vulnerability Assessment
+    description: Vulnerability assessment is the process of identifying, quantifying, and prioritizing vulnerabilities in a system. It involves scanning systems for known vulnerabilities, analyzing the potential impact of those vulnerabilities, and recommending mitigation strategies. This proactive approach helps organizations strengthen their security posture and reduce the risk of exploitation by malicious actors.
+  - id: software-security
+    name: Software Security
+    short: SoftSec
+    icon: shield
+    color: violet
+    description: Ensuring the security of software applications and systems through secure coding practices, code reviews, and penetration testing.
