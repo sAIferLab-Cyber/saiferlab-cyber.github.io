@@ -1,42 +1,19 @@
 items:
-- id: ai-security
-  name: AI for Cybersecurity
-  short: AI Security
-  icon: brain-circuit
-  color: cyan
-  description: Learning-based methods for threat detection, explainability, and robust security decision support.
-
-- id: malware-analysis
-  name: Malware Analysis
-  short: Malware
-  icon: bug
-  color: lime
-  description: Static, dynamic, and memory-based techniques for understanding malicious software and anti-analysis behavior.
-
-- id: digital-forensics
-  name: Digital Forensics
-  short: Forensics
-  icon: scan-search
-  color: violet
-  description: Evidence acquisition, reconstruction, provenance, and reproducible analysis across physical and virtual environments.
-
-- id: information-hiding
-  name: Information Hiding
-  short: Info Hiding
-  icon: radio-tower
-  color: amber
-  description: Covert channels, stegomalware, and measurable approaches to hidden communication risk.
-
-- id: supply-chain
-  name: Software Supply Chain
-  short: Supply Chain
-  icon: blocks
-  color: coral
-  description: Provenance, runtime monitoring, and resilient software lifecycles from development to deployment.
-
-- id: critical-systems
-  name: Critical Systems Security
-  short: Critical Systems
-  icon: network
-  color: blue
-  description: Security assessment for mobile, cloud, IoT, and critical infrastructures under realistic operational constraints.
+  - id: malware-analysis
+    name: Malware Analysis
+    short: Malware
+    icon: bug
+    color: lime
+    description: Static, dynamic, and memory-based techniques for understanding malicious software and anti-analysis behavior for Windows, Android, IOS, and IoT
+  - id: digital-forensics
+    name: Digital Forensics
+    short: Forensics
+    icon: scan-search
+    color: violet
+    description: Evidence acquisition, reconstruction, provenance, and reproducible analysis across physical and virtual environments.
+  - id: information-hiding
+    name: Information Hiding
+    short: Info Hiding
+    icon: radio-tower
+    color: amber
+    description: Covert channels, stegomalware, and measurable approaches to hidden communication risk.
