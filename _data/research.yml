@@ -4,7 +4,7 @@ items:
     short: Malware
     icon: bug
     color: lime
-    description: Static, dynamic, and memory-based techniques for understanding malicious software and anti-analysis behavior for Windows, Android, IOS, and IoT
+    description: Static, dynamic, and memory-based techniques for understanding malicious software and anti-analysis behavior for Windows, Android, IOS, and IoT, and different architectures.
   - id: digital-forensics
     name: Digital Forensics
     short: Forensics
