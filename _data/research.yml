@@ -17,3 +17,9 @@ items:
     icon: radio-tower
     color: amber
     description: Covert channels, stegomalware, and measurable approaches to hidden communication risk.
+  - id: cti
+    name: Cyber Threat Intelligence
+    short: CTI
+    icon: shield
+    color: lime
+    description: Analysis of data and cyber threats to understand how cyber attacks work, evolve, and their attribution
