@@ -11,7 +11,7 @@ Content that changes frequently lives in straightforward YAML files:
 
 - `_data/team.yml` contains professors, researchers, and PhD students, including
   optional photos and LinkedIn, GitHub, and ORCID profiles.
-- `_data/theses.yml` contains every thesis topic and its detailed activities.
+- `_data/theses.yml` contains every thesis topic, abstract, supervisor, tutor, and related link.
 - `_data/research.yml` contains the macroareas used by thesis topics. A thesis
   `macroarea` value should match the relevant macroarea `id`.
 

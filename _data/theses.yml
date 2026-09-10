@@ -2,11 +2,10 @@ items:
   - slug: placeholder
     title: Placeholder Thesis
     supervisor: Mario Rossi
+    tutor: Laura Bianchi
     macroarea: web
     degree_level: Bachelor's
     approach: Literature review
     link: https://unicadrsi-my.sharepoint.com/:t:/g/personal/nicola_deidda_unica_it/IQDEALAaspMIT7KC74Ky5WT0ARREm3Q9aXIU36xThrzuOKw?e=ntrDoo
     email: contact@email.com
-    summary: This is a summary
-    description: ''
-    activities: []
+    abstract: This is a short abstract describing the research question, objectives, and expected contribution of the thesis.

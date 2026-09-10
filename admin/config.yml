@@ -130,15 +130,10 @@ collections:
               - { label: ID, name: slug, widget: string, hint: "Unique lowercase ID with hyphens, e.g. android-malware-analysis" }
               - { label: Title, name: title, widget: string }
               - { label: Supervisor, name: supervisor, widget: string }
+              - { label: Tutor, name: tutor, widget: string, required: false, hint: "Operational point of contact for the student" }
               - { label: Macroarea ID, name: macroarea, widget: string, hint: "Use the ID configured under Macroareas, e.g. malware-analysis" }
               - { label: Degree level, name: degree_level, widget: select, options: ["Bachelor's", "Master's"], default: "Master's" }
               - { label: Approach, name: approach, widget: select, options: [Experimental, Literature review], default: Experimental }
-              - { label: External link, name: link, widget: string, required: false }
+              - { label: More details link, name: link, widget: string, required: false }
               - { label: Contact email, name: email, widget: string, required: false }
-              - { label: Summary, name: summary, widget: text }
-              - { label: Description, name: description, widget: text, required: false }
-              - label: Possible activities
-                name: activities
-                widget: list
-                required: false
-                field: { label: Activity, name: activity, widget: string }
+              - { label: Abstract, name: abstract, widget: text }
