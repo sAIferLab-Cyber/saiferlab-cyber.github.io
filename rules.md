@@ -7,17 +7,6 @@ page_kind: rules
 permalink: /rules/
 ---
 
-## Table of Contents
-
-1. [Preamble and Scope](#preamble)
-2. [General Rules](#general-rules)
-3. [Drafting Guidelines](#drafting-guidelines)
-4. [Student Autonomy](#student-autonomy)
-5. [Bachelor's Thesis](#bachelors-thesis)
-6. [Master's Thesis](#masters-thesis)
-7. [Final Phases](#final-phases)
-8. [Final Clause](#final-clause)
-
 # Thesis Regulations
 
 ## Before applying
