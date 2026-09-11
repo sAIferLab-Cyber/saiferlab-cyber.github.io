@@ -12,6 +12,20 @@ body_class: content-page
   </header>
 
   <div class="shell page-content-layout">
+    <nav class="page-index" aria-label="Page navigation">
+      <span>On this page</span>
+      {% if page.page_kind == 'about' %}
+      <a href="#our-mission">Our mission</a>
+      <a href="#how-we-work">How we work</a>
+      <a href="#research-areas">Research areas</a>
+      {% elsif page.page_kind == 'rules' %}
+      <a href="#before-applying">Before applying</a>
+      <a href="#thesis-proposal">Proposal</a>
+      <a href="#research-work">Research work</a>
+      <a href="#deliverables-and-responsible-conduct">Deliverables</a>
+      {% endif %}
+    </nav>
+
     <div class="prose page-prose">
       {{ content }}
 
